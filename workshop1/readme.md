@@ -3,6 +3,8 @@
 ---
 ## 1. ESP-NOW
 <img width="504" alt="Screen Shot 2024-01-30 at 1 42 46 PM" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/8a347019-ef6e-47d4-b4ee-2bd310d4d13a">
+
+
 What exactly is ESP-NOW? Why do we need it?
 ESP-NOW is a wireless communication protocol that allows multiple devices to connect to each other without using a Router's WiFi network.
 
