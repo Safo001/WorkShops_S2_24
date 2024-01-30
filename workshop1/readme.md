@@ -12,7 +12,11 @@ ESP-NOW is a wireless communication protocol that allows multiple devices to con
 - We will also be using Arduino IDE for this project. Just to clarify, 
 
 <img width="286" alt="Screen Shot 2024-01-30 at 1 46 47 PM" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/46bb8232-e9e3-46d9-a980-0b753890bb8c">
+
 This is the interface you will be pasting your code on. 
+
+- How it works
+  You don't need an inital WiFi network. All you need is an initial pairing with another device, but after pairing, the connection is peer-to-peer.
 ---
 ## The whole code: https://github.com/UBRoboticsWorkshop/ESP-NOW-controller/tree/main
 ---
