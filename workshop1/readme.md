@@ -192,7 +192,7 @@ void loop() {
 ```
 
 ---
-## 4. Rx code
+## 4. Rx code (Try to read and understand by yourself. Feel free to ask.)
 ### 4.1 header
 ```cpp
 #include <esp_now.h>
