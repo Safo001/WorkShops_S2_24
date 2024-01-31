@@ -75,6 +75,7 @@ void loop() {
 ## 3. Tx code
 > Code for the transmitter
 ### 3.1 Header part (create a head file(.h) with the same name of your .ino file)
+This can be done by clicking the three dots at the top right of the Arduino IDE, and then pressing new tab. Name this file ESPNOW_Transmitter.h.
 - **Include libraries: We need esp_now, WiFi and Arduino library. They are all installed by default. You can simply include them.**
 ```cpp
 #include <esp_now.h>
