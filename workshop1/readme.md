@@ -1,6 +1,11 @@
 # Build your Drone controller based on ESP-NOW
 
 ---
+As many of you found out during Sumobots, using an Access Point and TCP or UDP to communicate with your robot can cause a lot of issues- latency and disconnects being two major issues. For an FPV drone, this isn't good enough.
+Today, we'll be looking at using the ESP32's built in proprietary communication systems to achive much better control. 
+
+(You can even reuse this in sumobots next year to stomp first years)
+
 ## 1. ESP-NOW
 
 <p align="center">
@@ -9,7 +14,7 @@
 
 - **What exactly is ESP-NOW? Why do we need it?**
 
-ESP-NOW is a wireless communication protocol that allows multiple devices to connect to each other without using a Router's WiFi network.
+ESP-NOW is a wireless communication protocol that allows multiple devices to connect to each other without using a central WiFi network.
 
 - **We will also be using Arduino IDE for this project. Just to clarify, **
 
