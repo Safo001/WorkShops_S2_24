@@ -6,6 +6,8 @@ Today, we'll be looking at using the ESP32's built in proprietary communication 
 
 (You can even reuse this in sumobots next year to stomp first years)
 
+Today's workshop will be a fairly simple reintroduction to robotics, however in our next session we will start to take a deeper look into low level programming and hardware to start using the flight controller.
+
 ## 1. ESP-NOW
 
 <p align="center">
@@ -72,8 +74,8 @@ void loop() {
 ---
 ## 3. Tx code
 > Code for the transmitter
-### 3.1 header part (create a head file(.h) with the same name of your .ino file)
-- **include libraries: We need esp_now, WiFi and Arduino library. They are all installed by default. You can simply include them.**
+### 3.1 Header part (create a head file(.h) with the same name of your .ino file)
+- **Include libraries: We need esp_now, WiFi and Arduino library. They are all installed by default. You can simply include them.**
 ```cpp
 #include <esp_now.h>
 //#include <esp_wifi.h>
@@ -81,7 +83,7 @@ void loop() {
 #include <Arduino.h>
 ```
 
-- **create variables: WiFi channel, Rx MAC, and data for the receiver**
+- **Create variables: WiFi channel, Rx MAC, and data for the receiver**
 ```cpp
 // Set the wifi channel (1-13)
 #define channel_ 6
@@ -106,7 +108,7 @@ struct PacketData {
 } data;
 ```
 
-- **a function that helps to reduce the drift of the joystick.**
+- **A function that helps to reduce the drift of the joystick.**
 ```cpp
 uint16_t ReMap(uint16_t value, bool reverse) {
   if (value >= 2200) {
@@ -131,7 +133,7 @@ uint16_t ReMap(uint16_t value, bool reverse) {
 ```
 
 
-- **setup part:**
+- **Setup part:**
 ```cpp
 void setup() {
   Serial.begin(115200);
@@ -144,7 +146,7 @@ void setup() {
   WiFi.channel(channel_);
   WiFi.setTxPower(WIFI_POWER_MINUS_1dBm);
 ```
-- **turn on the sep now by add peers(The Rx device)**
+- **Turn on esp-now by add peers(The Rx device)**
 ```cpp
   if (esp_now_init() != ESP_OK) {   // Init ESP-NOW
     Serial.println("Error initializing ESP-NOW");
@@ -166,7 +168,7 @@ void setup() {
     Serial.println("Succes: Added peer");
   } 
 ```
-- **enable input pins for joysticks**
+- **Enable input pins for joysticks**
 ```cpp
   // joystics
   pinMode(32,INPUT);
@@ -180,11 +182,11 @@ void setup() {
   //pinMode(23,INPUT_PULLUP); 
 }
 ```
-- **loop function**
+- **Loop function**
 ```cpp
 void loop() {
 ```
-- **read the voltage from pins and remap the value**
+- **Read the voltage from pins and remap the value**
 ```cpp
 
   data.lxAxis    = ReMap(analogRead(32), false);
@@ -192,11 +194,11 @@ void loop() {
   data.rxAxis    = ReMap(analogRead(34), false);
   data.ryAxis    = ReMap(analogRead(35), false);
 ```
-- **send the message**
+- **Send the message**
 ```cpp
   esp_now_send(RxMacAddr, (uint8_t *) &data, sizeof(data));
 ```
-- **delay**
+- **Delay**
 ```cpp
   delay(5); //chip temperature issue
 }
@@ -209,7 +211,7 @@ void loop() {
 ## 4. Rx code (Try to read and understand by yourself. Feel free to ask.)
 </summary>
 
-### 4.1 header
+### 4.1 Header
 ```cpp
 #include <esp_now.h>
 //#include <esp_wifi.h>
@@ -259,7 +261,7 @@ void printMAC(const uint8_t * mac_addr){
 }
 ```
 
-### 4.2 main cpp
+### 4.2 Main cpp
 ```cpp
 #include "ESPNOW_Receiver.h"
 
