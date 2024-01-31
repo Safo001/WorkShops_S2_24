@@ -198,7 +198,12 @@ void loop() {
 ```
 
 ---
+<details>
+<summary>
+
 ## 4. Rx code (Try to read and understand by yourself. Feel free to ask.)
+</summary>
+
 ### 4.1 header
 ```cpp
 #include <esp_now.h>
@@ -317,3 +322,7 @@ void loop(){
   // Drone control & PID loop
 }
 ```
+
+</details>
+
+
