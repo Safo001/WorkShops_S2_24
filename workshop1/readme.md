@@ -35,6 +35,12 @@ This is the interface you will be pasting your code on.
 ![Schematic diagram](./pictures/WhatsApp%20Image%202024-01-29%20at%2000.14.45_c7931bff.jpg)
 ---
 > **The following part is the code used to send the message. You need to work with another group. One is the sender and one is the receiver.**
+
+> [!NOTE]
+> You need to know the MAC address of the TX and RX devices.
+> You need to set the TX and RX devices on the same channel.
+> You MUST NOT change the TX power.
+> You can ONLY INCREASE the TX delay function.
 ---
 ## 2. Get the MAC Address
 
