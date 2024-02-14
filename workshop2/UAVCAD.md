@@ -8,7 +8,9 @@ Unlike in Sumobots, where the focus was teaching basic use of CAD tools, the foc
 # Placing components
 Below is an image showing how you may choose to lay out your components:
 
-<img width="100%" alt="Screenshot 2023-10-18 at 13 28 03" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/DroneParts.png">
+<p align="right">
+<img width="100%" alt="Screenshot 2023-10-18 at 13 28 03" src="../Images/DroneParts.png">
+</p>
 
 A few things to consider:
 - Keep the antenna away from any wires carrying high current.
