@@ -11,17 +11,18 @@ Below is an image showing how you may choose to lay out your components:
 <img width="100%" alt="Screenshot 2023-10-18 at 13 28 03" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/DroneParts.png">
 
 A few things to consider:
-Keep the antenna away from any wires carrying high current.
-Make sure the LiDAR can see the floor.
-Give ample room between the propellers and the battery (at least 45mm for 75mm propellers).
-Make sure you can program using the USB-C port, leave enough room around the connector for thick cables.
-Make sure you can connect the Air Unit and the motor driver board.
-Don’t move the accelerometer too far away from the centre of mass.
-Put a cover over the air unit so that it won’t be damaged in a crash.
-The circular capacitor on the motor driver can be moved but must be kept close to the motor driver.
-Make heavy use of the project tool to add mounting holes.
-The Air Unit will be mounted with grommets that accept 2mm screws.
-Designing a Frame
+- Keep the antenna away from any wires carrying high current.
+- Make sure the LiDAR can see the floor.
+- Give ample room between the propellers and the battery (at least 45mm for 75mm propellers).
+- Make sure you can program using the USB-C port, leave enough room around the connector for thick cables.
+- Make sure you can connect the Air Unit and the motor driver board.
+- Don’t move the accelerometer too far away from the centre of mass.
+- Put a cover over the air unit so that it won’t be damaged in a crash.
+- The circular capacitor on the motor driver can be moved but must be kept close to the motor driver.
+- Make heavy use of the project tool to add mounting holes.
+- The Air Unit will be mounted with grommets that accept 2mm screws.
+
+# Designing a Frame
 Files for the main components- Air unit, motor, battery and ESC- are provided.
 -	Remember to add some size on your motor mounting holes- the 2mm motor mounting holes should be at least 2.4mm if it’s 3D printed. Also, the motor’s spindle protrudes out of the base so make sure to leave a hole for it- 6mm should be enough.
 -	The propeller’s diameter is 75mm, but you’ll want to leave ample room between them and the frame.
