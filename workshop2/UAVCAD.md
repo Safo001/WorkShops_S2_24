@@ -8,9 +8,9 @@ Unlike in Sumobots, where the focus was teaching basic use of CAD tools, the foc
 # Placing components
 Below is an image showing how you may choose to lay out your components:
 
-<p align="right">
-<img width="100%" alt="Screenshot 2023-10-18 at 13 28 03" src="../Images/DroneParts.png">
-</p>
+<img align="right" width="50%" alt="Screenshot 2023-10-18 at 13 28 03" src="../Images/DroneParts.png">
+
+<p align="left">
 
 A few things to consider:
 - Keep the antenna away from any wires carrying high current.
@@ -23,6 +23,8 @@ A few things to consider:
 - The circular capacitor on the motor driver can be moved but must be kept close to the motor driver.
 - Make heavy use of the project tool to add mounting holes.
 - The Air Unit will be mounted with grommets that accept 2mm screws.
+
+</p>
 
 # Designing a Frame
 Files for the main components- Air unit, motor, battery and ESC- are provided.
