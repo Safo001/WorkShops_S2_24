@@ -1,4 +1,4 @@
-# Build your Drone controller based on ESP-NOW
+![image](https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/b8ea64a4-15a8-471a-9684-b797bb9940c7)# Build your Drone controller based on ESP-NOW
 
 ---
 As many of you found out during Sumobots, using an Access Point and TCP or UDP to communicate with your robot can cause a lot of issues- latency and disconnects being two major issues. For an FPV drone, this isn't good enough.
@@ -7,6 +7,9 @@ Today, we'll be looking at using the ESP32's built in proprietary communication 
 (You can even reuse this in sumobots next year to stomp first years)
 
 Today's workshop will be a fairly simple reintroduction to robotics, however in our next session we will start to take a deeper look into low level programming and hardware to start using the flight controller.
+
+![image](https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/ffe8dd69-2443-48b4-bc6a-eed7c367af8d)
+
 
 ## 1. ESP-NOW
 
@@ -332,3 +335,6 @@ void loop(){
 ```
 
 </details>
+
+## 28th Feb - New Parts
+
