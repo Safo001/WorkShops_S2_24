@@ -339,3 +339,15 @@ void loop(){
 ## 28th Feb - New Parts
 
 ![image](https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/b8ea64a4-15a8-471a-9684-b797bb9940c7)
+
+NOTE: This model is a prototype and a basic idea for your team to build from. Please explore innovative ways to design your own controllers!!! It may be a good idea to think about ways that the circuitry can be encased...
+
+
+Please follow this video for soldering :
+
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/bee60bdb-9564-4a7f-a0d0-45dfc48bf05d
+
+
+
+
