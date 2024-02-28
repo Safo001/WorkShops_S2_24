@@ -1,4 +1,4 @@
-![image](https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/b8ea64a4-15a8-471a-9684-b797bb9940c7)# Build your Drone controller based on ESP-NOW
+# Build your Drone controller based on ESP-NOW
 
 ---
 As many of you found out during Sumobots, using an Access Point and TCP or UDP to communicate with your robot can cause a lot of issues- latency and disconnects being two major issues. For an FPV drone, this isn't good enough.
@@ -338,3 +338,4 @@ void loop(){
 
 ## 28th Feb - New Parts
 
+![image](https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/b8ea64a4-15a8-471a-9684-b797bb9940c7)
