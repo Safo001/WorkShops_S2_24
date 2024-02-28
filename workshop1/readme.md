@@ -350,10 +350,10 @@ https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/7468711a-
 
 (2) Solder Joysticks to Perfboard
 
-https://drive.google.com/drive/folders/1UYhm-c77dL-LISOzTpersRXsNKGeuwwQ?usp=sharing
+Good quality Vido : https://drive.google.com/drive/folders/1UYhm-c77dL-LISOzTpersRXsNKGeuwwQ?usp=sharing
 
 
-
+Sorry for the bad quality (sam vid as google drive link)
 https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/f3f0fe57-48ea-4473-86bf-81150caa7db5
 
 
