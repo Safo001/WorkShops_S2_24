@@ -8,8 +8,6 @@ Today, we'll be looking at using the ESP32's built in proprietary communication 
 
 Today's workshop will be a fairly simple reintroduction to robotics, however in our next session we will start to take a deeper look into low level programming and hardware to start using the flight controller.
 
-![image](https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/ffe8dd69-2443-48b4-bc6a-eed7c367af8d)
-
 
 ## 1. ESP-NOW
 
