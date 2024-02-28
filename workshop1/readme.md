@@ -344,9 +344,17 @@ NOTE: This model is a prototype and a basic idea for your team to build from. Pl
 Please follow this video for soldering :
 
 
+(1) Solder ESP to Perfboard
 
 https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/7468711a-e8a6-4a86-9586-cd83d3d7a7a9
 
+(2) Solder Joysticks to Perfboard
+
+https://drive.google.com/drive/folders/1UYhm-c77dL-LISOzTpersRXsNKGeuwwQ?usp=sharing
+
+
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/f3f0fe57-48ea-4473-86bf-81150caa7db5
 
 
 
