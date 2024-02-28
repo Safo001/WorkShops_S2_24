@@ -346,7 +346,9 @@ NOTE: This model is a prototype and a basic idea for your team to build from. Pl
 Please follow this video for soldering :
 
 
-https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/bee60bdb-9564-4a7f-a0d0-45dfc48bf05d
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/110237339/7468711a-e8a6-4a86-9586-cd83d3d7a7a9
+
 
 
 
