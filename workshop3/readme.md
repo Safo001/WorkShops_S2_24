@@ -276,12 +276,19 @@ Except the two bytes for temperature. They’ll change when the temperature chan
 
 Keep using the IMU_SEQUENTIAL_READ sketch for this part.
 
-The data is returned as a high byte and a low byte- these are two 8 bit numbers that can be concatenated in binary to form one signed 16 bit number, as shown below 
+The data is returned as a high byte and a low byte- these are two 8 bit numbers that can be concatenated (added end to end) in binary to form one signed 16 bit number, as shown below:
 
-int16_t
-High Byte	Low Byte
--32768	16384	8192	4096	2048	1024	512	256	128	64	32	16	8	4	2	1
-1	0	0	1	1	0	1	0	1	1	1	0	1	0	1	1
+|           | -32768 | 16384 | 8192 | 4096 | 2048 | 1024 | 512 | 256 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----------|--------|-------|------|------|------|------|-----|-----|-----|----|----|----|--|---|---|---|
+| High Byte | 1      | 0     | 0    | 1    | 1    | 0    | 1   | 0   |     |    |    |    |  |   |   |   |
+| Low Byte  |        |       |      |      |      |      |     |     | 1   | 1  | 1  | 0  | 1 | 0 | 1 | 1 |
+
+
+the high byte is 10011010 in binary which represents 154 in decimal.
+
+the low byte is 11101011 in binary which represents 235 in decimal.
+
+When we add them together, the first bit becomes negative creating -25877 in decimal.
 
 The reason the numbers are so erratic is that some are high bytes, others low bytes, and all unsigned while the data is signed.
 
@@ -289,27 +296,39 @@ To process this, we’ll use the left bit shift function << and or function |. Y
 
 Create seven int16_t variables, named with their contents. Then for each left shift the high byte and combine it with the low byte. Finally, print them all out so they can be read.
 
-Hint: Combining Bytes
-
-The high byte must be moved 8 places left, so use: 
-
-int16_t data1;
-
-data1 = imuDataRawAccGyro[0] << 8 | imuDataRawAccGyro[1];
-
+<details>
+  <summary> <b> Hint: Combining Bytes </b> </summary>
+  
+  The high byte must be moved 8 places left, so use: 
+  
+  ```cpp
+  int16_t data1;
+  data1 = imuDataRawAccGyro[0] << 8 | imuDataRawAccGyro[1];
+```
 to combine the two readings into one 16 bit number that can be positive or negative.
 
-Hint: Register Maps
+</details>
 
+<details>
+  <summary> <b> Hint: Register Maps  </b>  </summary>
+  
 The read starts at 59 and has a length of 14. This means the following registers are read:
  
 The variables, in order, should be:
 
+```cpp
 int16_t accX, accY, accZ, temperature, gyroX, gyroY, gyroZ;
+```
 
 _H means high byte, and _L means low byte. The array will have them in order, so simply assign 0 and 1 to accX, 2 and 3 to accY and so on.
 
-Interpreting the Results
+</details>
+
+
+
+
+
+## Interpreting the Results
 
 The accelerometer data measures linear acceleration, which lets it pick up both gravity and motion. The gyroscope picks up angular velocity.
 
