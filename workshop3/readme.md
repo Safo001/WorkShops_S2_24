@@ -62,9 +62,9 @@ This section is on the LED_TEST sketch.
 
 Unlike the LEDs last semester, the Air Unit has a WS2812 addressable LED allowing digital colour and brightness control. It’s also a little bit brighter than a regular LED.
 
-Use neopixelWrite() to set the colour of the LED, which is connected to pin 48. 
+Use ```neopixelWrite()``` to set the colour of the LED, which is connected to pin 48. 
 
-You can use (brightness+brightness*sin(i)/2) to have the brightness of each channel fade smoothly between zero and brightness.
+You can use ```(brightness+brightness*sin(i)/2)``` to have the brightness of each channel fade smoothly between zero and brightness.
 
 ```cpp
 const int brightness = 27;
@@ -83,9 +83,9 @@ void loop() {
 
 To test how long this command takes, create a variable called:
 
-long startTime, endTime;
+```long startTime, endTime;```
 
-Set startTime to micros() before the code to be measured, and endTime to micros() once it has run. You can then read out the difference between the two out on the serial monitor. How long does this command take?
+Set ```startTime``` to ```micros()``` before the code to be measured, and ```endTime``` to ```micros()``` once it has run. You can then read out the difference between the two out on the serial monitor. How long does this command take?
 
 For dynamic systems, it’s important to make sure that your code can run fast enough to react to changes in the environment. The ESP32 has two cores, so you can put code like this which isn’t time critical on one, and the more important code on the other.
 
@@ -172,18 +172,18 @@ void setupIMUSPI(SPIClass *IMUHSpi) {
 }
 ```
 
-In this code, the function readIMURegister() takes a register to read and returns the value of the register. 
+In this code, the function ```readIMURegister()``` takes a register to read and returns the value of the register. 
 
-Run this code, and check what is said in the serial monitor. The IMU won’t be found, because readIMURegister() doesn’t do anything (causing “ an unpleasant day”).
+Run this code, and check what is said in the serial monitor. The IMU won’t be found, because ```readIMURegister()``` doesn’t do anything (causing “ an unpleasant day”).
 
-Using digtalWrite() and IMUHSpi->transfer():
+Using ```digtalWrite()``` and ```IMUHSpi->transfer()```:
 
 1.	Set the NCS pin to low
 2.	Send the register address with the first bit set to one (to indicate a write command) to the IMU
 3.	Transfer 0x00 to the IMU, and save the response to regData to be returned 
 4.	Set the NCS pin back to high
 
-When it works, it should print “IMU found”. Some of the IMUs may return a value of 0x71, if this is the case just change the definition.
+When it works, it should print “IMU found”. Some of the IMUs may return a value of ```0x71```, if this is the case just change the definition.
 
 
 <details>
@@ -199,7 +199,7 @@ registerAddress will be a value from 0-127. It’ll need to be a value from 128-
 registerAddress | 0b10000000
 ```
 
-0b tags the number as a binary number. However, this is not very readable so we can use hexadecimal instead.
+```0b``` tags the number as a binary number. However, this is not very readable so we can use hexadecimal instead.
 
 
 ```cpp
@@ -212,11 +212,11 @@ This is the same number (127), but represented as hexadecimal. Using compiler co
 #define READ_BIT_MASK 0x80
 ```
 
-This line of code will not be uploaded to the ESP32 S3. Instead, it tells the compiler to replace every instance of “READ_BIT_MASK” with “0x80”. Be careful- it won’t take context into account! If you misuse compiler commands, for example defining a value for “int”, the compiler will replace every single “int” with this definition of it.
+This line of code will not be uploaded to the ESP32 S3. Instead, it tells the compiler to replace every instance of "```READ_BIT_MASK```” with “```0x80```”. Be careful- it won’t take context into account! If you misuse compiler commands, for example defining a value for “int”, the compiler will replace every single “int” with this definition of it.
 
-Use  ```IMUHspi->transfer() to send reg | 0x80```. Then, send 0x00 and save the number it returns to regData. Note that because we’re using a pointer to refer to the SPI bus instead of using it directly, we use “->” rather than “.” to address member functions. 
+Use  ```IMUHspi->transfer()``` to send ```reg | 0x80```. Then, send ```0x00``` and save the number it returns to ```regData```. Note that because we’re using a pointer to refer to the SPI bus instead of using it directly, we use “->” rather than “.” to address member functions. 
 
-Finally, set pin MPU6500_NCS to HIGH, in order to end the communication.
+Finally, set pin ```MPU6500_NCS``` to ```HIGH```, in order to end the communication.
 
 </details>
 
@@ -228,7 +228,7 @@ Use the IMU_SEQUENTIAL_READ sketch for this part.
 
 If we want to read the IMU data, there are 12 registers to read- 6 different values, with two bytes each. It’s not very quick to read each register, end the communication, start it again, address the next register, so on, so on.
 
-Instead, we can simply read the first register and then keep sending 0x00s. This will trigger a sequential read, moving down the register table each time. Not all devices support this, but all of the good ones do.
+Instead, we can simply read the first register and then keep sending ```0x00```. This will trigger a sequential read, moving down the register table each time. Not all devices support this, but all of the good ones do.
 
 Annoyingly, Invensense decided to put thermometer data right in the middle of the data we actually care about. Great prank guys.
 
@@ -280,13 +280,13 @@ void setupIMUSPI(SPIClass *IMUHSpi) {
 
 ```
 
-Once again, fill in the blanks for readIMUSPI(int reg, int count, byte data[])
+Once again, fill in the blanks for ```readIMUSPI(int reg, int count, byte data[])```
 1.	Pull CS low
 2.	Send a register address, with first bit set to indicate “read”
-3.	Iterate through the data[] array with a for loop, transferring 0x00 and storing the responses in data[i]
+3.	Iterate through the ```data[]``` array with a for loop, transferring ```0x00``` and storing the responses in ```data[i]```
 4.	Pull CS low high to end the communication
 
-Since all arrays are passed by reference, any changes made to data[] will persist outside readIMUSPI()- there’s no need to return anything.
+Since all arrays are passed by reference, any changes made to ```data[]``` will persist outside ```readIMUSPI()```- there’s no need to return anything.
 
 When this code works, you should see a ton of numbers being printed in the Serial terminal- they won’t seem to mean anything, but will change when the board is moved.
 
@@ -314,7 +314,7 @@ The reason the numbers are so erratic is that some are high bytes, others low by
 
 To process this, we’ll use the left bit shift function << and or function |. You can use the register map to see what data is stored where.
 
-Create seven int16_t variables, named with their contents. Then for each left shift the high byte and combine it with the low byte. Finally, print them all out so they can be read.
+Create seven ```int16_t``` variables, named with their contents. Then for each left shift the high byte and combine it with the low byte. Finally, print them all out so they can be read.
 
 <details>
   <summary> <b> Hint: Combining Bytes </b> </summary>
