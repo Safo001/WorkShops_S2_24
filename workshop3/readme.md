@@ -17,6 +17,8 @@ The Air Unit uses an ESP32-S3, which is a major upgrade from the base ESP32. One
 However, you’ll need to bootstrap it the first time. You can do this simply by holding down the BOOT button as you plug it in, to put it into boot mode. In this mode, it won’t run any code- it’ll just wait for a download.
 
 Now you should see a port available for download and can proceed as normal. Under “Tools”, set the following settings:
+
+<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/UploadError.png">
  
 Hit upload with a blank sketch to save these settings to the ESP32-S3. If you can’t get the board to print text, make sure these settings are correct.
 
