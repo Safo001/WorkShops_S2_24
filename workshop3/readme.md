@@ -12,6 +12,8 @@ The Air Unit is similar to the ESP32 development board from Sumobots, however wi
 Through this tutorial, make sure to use the [code glossary](./CodeGlossary.md) included. 
 
 # Step 1: Connect to the ESP32-S3
+For this part, make a new sketch.
+
 The Air Unit uses an ESP32-S3, which is a major upgrade from the base ESP32. One of the benefits is direct connection to USB, without a programming chip.
 
 However, you’ll need to bootstrap it the first time. You can do this simply by holding down the BOOT button as you plug it in, to put it into boot mode. In this mode, it won’t run any code- it’ll just wait for a download.
