@@ -9,7 +9,7 @@ The Air Unit is similar to the ESP32 development board from Sumobots, however wi
 -	USB-C, because at UBRobotics we live large 
 -	RGB LED, added because our President Aswathy is a Gamer and she threatened to kick me off the committee if I didn’t make the drones replicate the exact colour fade she uses on her Cherry MX 2.0S Red Gaming Keyboard (with mechanical switches). Making the LED cover the full Adobe Wide Gamut RGB was the hardest part of the design, so you’d better appreciate it.
 
-Through this tutorial, make sure to use the code glossary included. 
+Through this tutorial, make sure to use the [code glossary](./CodeGlossary.md) included. 
 
 # Step 1: Connect to the ESP32-S3
 The Air Unit uses an ESP32-S3, which is a major upgrade from the base ESP32. One of the benefits is direct connection to USB, without a programming chip.
@@ -18,7 +18,7 @@ However, you’ll need to bootstrap it the first time. You can do this simply by
 
 Now you should see a port available for download and can proceed as normal. Under “Tools”, set the following settings:
 
-<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/UploadError.png">
+<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/SettingsForESP.png">
  
 Hit upload with a blank sketch to save these settings to the ESP32-S3. If you can’t get the board to print text, make sure these settings are correct.
 
@@ -39,10 +39,14 @@ void loop() {
 If successful, the unit will print Hello World very quickly into the serial monitor- the system is working. 
 
 However, if you attempt to upload a new sketch you will probably see something like this:
+
+<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/UploadError.png">
  
 This is because the USB connection is overloaded. This is a possible issue with the ESP32-S3 onboard USB, but it can be fixed by using the BOOT button.
 
 Add a 1000ms delay into the sketch after the print statement, and then unplug the ESP32-S3. Hold down the button marked BOOT, plug in the USB cable and then release the BOOT button. You should be able to see this message in the serial terminal:
+
+<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/SetToDFU.png">
  
 Uploading should now be successful, and the program will run after you reboot the ESP32-S3- this time printing the text once per second. From here, you can upload the code without using the BOOT button. If there are issues with uploading to the ESP32-S3, try the BOOT button to recover it.
 
@@ -89,14 +93,14 @@ Simple sensors, such as a thermistor, use analog signals to communicate; in more
 
 ## Registers
 
-Most serial devices use what is known as a register map. The register map for the MPU6500 can be found here:
-
-https://invensense.tdk.com/download-pdf/mpu-6500-register-map/
+Most serial devices use what is known as a register map. The register map for the MPU6500 can be found [here](https://invensense.tdk.com/download-pdf/mpu-6500-register-map)
 
 A register map is like a table, where each “register” is a location which holds a value- these are effectively variables stored on the sensor. These values can either control the behaviour of the sensor, or hold information to be read. Some registers can be both written and read, while others have controlled access.
 
 ## SPI
 The Serial Peripheral Interface uses four lines:
+
+<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/SPI.png">
  
 Credit: Analog Devices
 
@@ -107,9 +111,7 @@ Credit: Analog Devices
 
 The IMU can run SPI at 2,000,000 bits per second for all of its registers, and 20,000,000 for the main data registers.
 
-If you want to learn more about SPI, have a look at this:
-
-https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/programming-for-spi 
+If you want to learn more about SPI, have a look at [this](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/programming-for-spi)
 
 # Step 4: Reading From the IMU	
 
@@ -181,28 +183,42 @@ Using digtalWrite() and IMUHSpi->transfer():
 
 When it works, it should print “IMU found”. Some of the IMUs may return a value of 0x71, if this is the case just change the definition.
 
-Hint
-To make this work, use digtalWrite() to set MPU6500_NCS (Pin 18) to LOW, which tells the IMU to expect communications. 
+
+<details>
+  <summary> <b> Hint: SPI comms  </b>  </summary>
+  
+To make this work, use ```digtalWrite()``` to set ```MPU6500_NCS``` (Pin 18) to LOW, which tells the IMU to expect communications. 
 
 An outgoing message can be either a read command or a write command, identified by the first bit being a 1 for read or 0 for write.
 
 registerAddress will be a value from 0-127. It’ll need to be a value from 128-255 to read. We can use Boolean operations to make this so- this is known as “setting a bit”. To set the leftmost bit to one, we can use: 
 
+```cpp
 registerAddress | 0b10000000
+```
 
 0b tags the number as a binary number. However, this is not very readable so we can use hexadecimal instead.
 
+
+```cpp
 registerAddress | 0x80
+```
 
 This is the same number (127), but represented as hexadecimal. Using compiler commands we can make it even more readable. There is a line at the top of the sketch:
 
+```cpp
 #define READ_BIT_MASK 0x80
+```
 
 This line of code will not be uploaded to the ESP32 S3. Instead, it tells the compiler to replace every instance of “READ_BIT_MASK” with “0x80”. Be careful- it won’t take context into account! If you misuse compiler commands, for example defining a value for “int”, the compiler will replace every single “int” with this definition of it.
 
-Use  IMUHspi->transfer() to send reg | 0x80. Then, send 0x00 and save the number it returns to regData. Note that because we’re using a pointer to refer to the SPI bus instead of using it directly, we use “->” rather than “.” to address member functions. 
+Use  ```IMUHspi->transfer() to send reg | 0x80```. Then, send 0x00 and save the number it returns to regData. Note that because we’re using a pointer to refer to the SPI bus instead of using it directly, we use “->” rather than “.” to address member functions. 
 
 Finally, set pin MPU6500_NCS to HIGH, in order to end the communication.
+
+</details>
+
+
 
 # Step 5: Read Faster
 
@@ -347,6 +363,8 @@ The LiDAR uses I2C, which is slower than SPI but uses less pins and is more suit
 For this one, I have ported the STMicroelectronics driver to be compatible with ESP32. Instead of programming a driver, like with the MPU6500, you’ll be working with the API.
 
 This is very good news for you because there is no register map for the VL53L1. The reason for this, and I promise robotics member that I would not lie to you, is: 
+
+<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/Images/GreatSupport.png">
  
 
 # Step 7: Using the VL53L1 ULD
