@@ -349,7 +349,7 @@ This is very good news for you because there is no register map for the VL53L1. 
 
 # Step 7: Using the VL53L1 ULD
 
-For this step, use the VL53Driver sketch.
+For this step, use the VL53_DRIVER sketch. This also has a header file where a lot of register names are defined, so I've packed them together as a .ZIP file. You'll need to uncompress this to open the sketch.
 
 A useful feature on the Arduino IDE 2.0 is code folding- hover to the left of a function and an arrow should appear. Click this to minimize the	 function to one line, making it easier to quickly read over the code. You can use this to collapse all of the API functions, so that you can quickly read them in the next section and find which function corresponds to each step.
 
@@ -359,5 +359,9 @@ In the main loop, make the while loop check if data is ready. next use the corre
 
 Once you’ve done that, clear the interrupt to have the VL53 start another read.
 
-One last thing- there should be a little plastic cover over your LiDAR. The optics are somewhat fragile, and this is there to protect them. However, to get accurate readings you’ll need to permanently remove this by peeling it off with the small tab below the optics.
+One last thing- there should be a little plastic cover over your LiDAR. The optics are somewhat fragile, and this is there to protect them. However, to get accurate readings you’ll need to permanently remove this by peeling it off with the small tab below the optics. It might have already fallen off, so be careful not to scratch the lens.
 
+# Nest steps
+The main thing to focus on from here is working on your drone frame. Remember, it's not just about being strong enough to fly- you'll also want it to survive a crash and be rigid enough to suppress vibrations.
+
+Next session, we'll be looking at how to turn these numbers into useful flying. However, you'll want to make your drone frame now so that you have time to tweak and improve it.
