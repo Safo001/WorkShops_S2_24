@@ -1,5 +1,5 @@
-Code Dictionary
-
+# Code Dictionary
+## General
 ```cpp
 void neopixelWrite(uint8_t pin, uint8_t red_val, uint8_t green_val, uint8_t blue_val)
 ```
@@ -13,7 +13,7 @@ Returns the number of microseconds the sketch has been running
 
 
 ```cpp
-uint8_t transfer(uint8_t data);
+uint8_t transfer(uint8_t data)
 ```
 
 Transmits a byte of data on MOSI, and listens for a byte of data on MISO
@@ -35,3 +35,29 @@ Left shift- moves each bit in variableToShift left, placesToShift times. This is
 int variableA | int variableB
 ```
 Bit-wise or- combines two variables by performing an "or" function on each pair of bits. 
+
+## VL53L1 ULD
+```cpp
+int bootState()
+```
+Returns 1 if booted, 0 if not. Make sure to wait until the sensor is fully booted before trying to init, or your LiDAR firmware will become a mystery box
+
+```cpp
+void initLiDAR()
+```
+Flashes a default config to the LiDAR and has it begin ranging
+
+```cpp
+boolean dataReady()
+```
+Returns true if the LiDAR has new data. Can also be replaced with reading the GPIO interrupt pin
+
+```cpp
+int getRange()
+```
+Returns the measured distance, converted to mm
+
+```cpp
+uint8_t getRangeStatus()
+```
+Zero means the current range is valid, anything else means panic (or out of range).
