@@ -361,7 +361,7 @@ Once you’ve done that, clear the interrupt to have the VL53 start another read
 
 One last thing- there should be a little plastic cover over your LiDAR. The optics are somewhat fragile, and this is there to protect them. However, to get accurate readings you’ll need to permanently remove this by peeling it off with the small tab below the optics. It might have already fallen off, so be careful not to scratch the lens.
 
-# Nest steps
+# Next steps
 The main thing to focus on from here is working on your drone frame. Remember, it's not just about being strong enough to fly- you'll also want it to survive a crash and be rigid enough to suppress vibrations.
 
 Next session, we'll be looking at how to turn these numbers into useful flying. However, you'll want to make your drone frame now so that you have time to tweak and improve it.
