@@ -11,6 +11,8 @@ Firstly, make sure that you have all of your parts:
 - 4 * Yellow Grommits
 - Battery Cable
 
+<img width="500" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/workshop4/Videos/Electronics.jpg">
+
 And the printed parts:
 
 <img width="500" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/tree/main/workshop4/Videos/PrintedParts.jpg">
