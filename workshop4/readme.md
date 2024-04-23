@@ -43,3 +43,16 @@ Make sure to consider the angle you're soldering from. Put the iron on the side 
 The second best, but sometimes needed, way to solder on the wires is by first addind solder to the pad and then melting it while pressing the wire into it. Make sure that the insulation of the wire doesn't touch the solder, and be aware that the wire might heat up. This is a slightly questionable technique, but it's the easiest way to get the job done.
 
 Next, solder the XT30 battery connector and capacitor to the ESC. Trim down the capacitor legs, and strip the insulation back on the battery wires. Press the capacitor legs through the holes in the ESC pads, making sure that the polarity is correct. Use the second hand to position the wire on the outside of the pad, and solder it down.
+
+# Testing
+To test the power systems, we'll first use the bench supply. The main benefit of this is that a short circuit will cause a current cap rather than an explosion. Set the current to 500mA, to mitigate how much current can flow in this case. 
+
+### Do not run the motors with the propellers connected! 
+
+Upload the ESC testing sketech to the Air Unit, and disconnect the air unit from the computer. The system will now try to spin it's motors 2.5 seconds after being connected to power.
+
+Use the male XT30 connector with two leads soldered onto it to connect the bench supply, paying careful attention to the polarity. 
+
+The ESC will emit a series of beeps, then spin up the motors. Look closely at the screw threads on the motor outputs- They should be screwing downwards, like in this video:
+
+If a motor is spinning backwards, it can be reversed by simply swapping two of the motor's wires. On a BLDC motor such as this, it doesn't matter which pair of wires are swapped- swapping any two will reverse it. You can use the technique described earlier of heating a solder blob and then inserting the wire to do this quickly.
