@@ -26,7 +26,7 @@ Place the Air Unit into the cavity on the bottom of the frame, and use four M2 b
 
 Push some bolts through the frame and the guard, so as to align them. Next, screw the motor down onto it.
 
-## Important! The motor nut propeller colours need to the in the same positions as in the videos, as they determine spin direction!
+### Important! The motor nut propeller colours need to the in the same positions as in the videos, as they determine spin direction!
 
 Use 4 M2 bolts to mount the 4 in 1 ESC to the top of the drone.
 
