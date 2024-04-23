@@ -13,7 +13,7 @@ Firstly, make sure that you have all of your parts:
 
 And the printed parts:
 
-<img width="600" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/tree/main/workshop4/Videos/PrintedParts.jpg">
+<img width="500" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/tree/main/workshop4/Videos/PrintedParts.jpg">
 
 - Propeller Guards
 - Frame
