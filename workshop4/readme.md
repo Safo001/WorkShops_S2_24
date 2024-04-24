@@ -28,6 +28,10 @@ Get your Air Unit ready by snaping off the rails, if you haven't already.
 
 Push 4 grommits into the Air Unit board.
 
+<video src="https://www.youtube.com/watch?v=8Y0zeBvK7N8&list=PLkHek7ZiQ1lP2mcZv7bU4WBEhGbF2ynJH&index=2&pp=iAQB" controls="controls" style="max-width: 730px;">
+</video>
+
+
 Place the Air Unit into the cavity on the bottom of the frame, and use four M2 bolts to secure it.
 
 Push some bolts through the frame and the guard, so as to align them. Next, screw the motor down onto it.
