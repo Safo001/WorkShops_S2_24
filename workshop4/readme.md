@@ -17,8 +17,6 @@ And the printed parts:
 
 <img width="500" src="https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/blob/main/workshop4/Videos/PrintedParts.jpg">
 
-
-
 - Propeller Guards
 - Frame
 - Battery mount
@@ -26,15 +24,30 @@ And the printed parts:
 # Assembly 
 Get your Air Unit ready by snaping off the rails, if you haven't already. 
 
-Push 4 grommits into the Air Unit board.
+Push 4 grommits into the Air Unit board. This can be a bit difficult, try squishing the grommit to squeeze it through the board.
 
-<video src="https://www.youtube.com/watch?v=8Y0zeBvK7N8&list=PLkHek7ZiQ1lP2mcZv7bU4WBEhGbF2ynJH&index=2&pp=iAQB" controls="controls" style="max-width: 730px;">
-</video>
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/7c90dd00-24de-48df-a7dd-f99b9ae6fdc1
 
+Remove the LiDAR cover, a thin orange file. Check carefully if it has already fallen off, otherwise you may scratch the LiDAR.
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/bb20e618-9f44-439a-a1e0-7cc39bd59e51
+
+Fit the ESC connector.
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/d694c8c8-acc0-4bfe-938f-f40fce734783
 
 Place the Air Unit into the cavity on the bottom of the frame, and use four M2 bolts to secure it.
 
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/95f320fe-4e49-4986-b4f0-f9991f88dea0
+
+Push 4 grommits into the 4 in 1 ESC
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/dd1053c3-97e8-4211-8c61-10d019f4d6c8
+
+
 Push some bolts through the frame and the guard, so as to align them. Next, screw the motor down onto it.
+
+
 
 ### Important! The motor nut propeller colours need to the in the same positions as in the videos, as they determine spin direction!
 
@@ -60,5 +73,8 @@ Upload the ESC testing sketech to the Air Unit, and disconnect the air unit from
 Use the male XT30 connector with two leads soldered onto it to connect the bench supply, paying careful attention to the polarity. 
 
 The ESC will emit a series of beeps, then spin up the motors. Look closely at the screw threads on the motor outputs- They should be screwing downwards, like in this video:
+
+https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/88b82665-31b5-4852-8465-4818063c72b0
+
 
 If a motor is spinning backwards, it can be reversed by simply swapping two of the motor's wires. On a BLDC motor such as this, it doesn't matter which pair of wires are swapped- swapping any two will reverse it. You can use the technique described earlier of heating a solder blob and then inserting the wire to do this quickly.
