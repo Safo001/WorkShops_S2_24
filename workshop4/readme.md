@@ -34,6 +34,8 @@ Push some bolts through the frame and the guard, so as to align them. Next, scre
 
 ### Important! The motor nut propeller colours need to the in the same positions as in the videos, as they determine spin direction!
 
+Push 4 grommits into the ESC.
+
 Use 4 M2 bolts to mount the 4 in 1 ESC to the top of the drone.
 
 Solder on the motor wires. The best way to do this is to use your soldering stand to hold the wire against the side of the pad, such that the springiness of the wire puts a slight amount of pressure on the ESC. Clean your iron on the stand, before applying a very small amount of solder to the iron. This solder isn't to secure the wire, but to allow the liquid solder to better transfer heat than a dry iron. Let the pad heat up before you add more solder, and then hold the iron on the pad until the solder flows across it.
@@ -49,7 +51,7 @@ To test the power systems, we'll first use the bench supply. The main benefit of
 
 ### Do not run the motors with the propellers connected! 
 
-Upload the ESC testing sketech to the Air Unit, and disconnect the air unit from the computer. The system will now try to spin it's motors 2.5 seconds after being connected to power.
+Upload the ESC testing sketech to the Air Unit, and disconnect the air unit from the computer. The system will now try to spin its motors 2.5 seconds after being connected to power.
 
 Use the male XT30 connector with two leads soldered onto it to connect the bench supply, paying careful attention to the polarity. 
 
