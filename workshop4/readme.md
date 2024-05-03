@@ -84,7 +84,7 @@ Once you're sure the soldering is complete, mount the top part. If in doubt abou
 https://github.com/UBRoboticsWorkshop/WorkShops_S2_24/assets/20403882/15de63a5-3043-421d-8a90-f4572b7fb201
 
 # Testing
-To test the power systems, we'll first use the bench supply. The main benefit of this is that a short circuit will cause a current cap rather than an explosion. Set the current to 500mA, to mitigate how much current can flow in this case. 
+To test the power systems, we'll first use the bench supply. The main benefit of this is that a short circuit will cause a current cap rather than an explosion. Set the current to 500mA, to mitigate how much current can flow in this case, and the voltage to 11.1v. 
 
 ### Do not run the motors with the propellers connected! 
 
